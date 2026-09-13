@@ -1,0 +1,131 @@
+---
+title: |
+  <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;">
+    <img src="Marca_UEPB.png" alt="Logo UEPB" style="width:150px; height:auto;">
+    <span style="display:block;">Algoritmos e Lógica de Programação</span>
+  </div>
+title-slide-attributes:
+  data-background-color: "#f2f2f3"
+author: "Professor: Pedro M. Almeida-Junior"
+institute:  "Estatística e Ciência de Dados-UEPB"
+format: 
+  revealjs: 
+    width: 1000
+    margin: 0.1
+    logo: Marca_UEPB.png
+    theme: [default, hscroll.scss]
+    transition: slide
+    background-transition: fade
+    smaller: true
+    scrollable: true
+knitr:
+  opts_chunk:
+    message: false
+    warning: false
+css: hscroll.scss
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+#  Curso Algoritmos e Lógica de Programação
+
+## <span style="font-size: 40px;"> Introdução a Algoritmos e Lógica de Programação </span>
+
+<br/>
+
+### Unidade 1
+
+- Introdução à lógica e estruturas de programação
+- Introdução à análise de algoritmos.
+- Complexidade computacional e análise de desempenho.
+- Tipos Abstratos de Dados (TAD).
+- Estruturas de dados lineares.
+- Arrays e operações básicas.
+- Listas encadeadas e suas operações.
+- Pilhas e filas.
+- Gerenciamento de memória dinâmica.
+- Implementação e aplicação das estruturas de dados em Python.
+
+<br/>
+
+### Unidade 2
+
+- Algoritmos de busca em memória principal.
+- Busca sequencial e busca binária.
+- Tabelas hash e funções de espalhamento.
+- Introdução às estruturas de dados em grafos.
+- Representação de grafos.
+- Percursos e operações básicas em grafos.
+- Análise da complexidade dos algoritmos de busca e manipulação.
+- Aplicações de estruturas de dados em softwares e problemas de Estatística e Ciência de Dados.
+- Implementação de estruturas e algoritmos utilizando Python.
+
+
+## <span style="font-size: 40px;"> Referências </span>
+
+</br>
+
+1. Alice Zhao. *SQL - Guia Prático: um Guia Para o uso de SQL*. Novatec 4 Ed (2023). 
+
+
+## Avaliação 
+
+</br>
+
+Nota por unidade: Prova + Seminários 
+
+
+## introdução 
+
+</br>
+
+- Um programa de computador ou simplesmente *software* é representado pelas instruções e dados que algum humano definiu e que, ao serem executados por alguma máquina, cumprem algum objetivo. 
+
+</br>
+
+- O objetivo do software é que motiva sua construção. Este pode ser definido como alguma necessidade, por exemplo, um programa que fornece previsões metereológicas, ou programa para comandar um robô aspirador, etc... 
+
+---
+
+## Fluxo de construção de software
+
+</br>
+
+<div style="display:grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap:14px; align-items:center; margin-top:28px;">
+
+<div style="background:#eaf3ff; border:1px solid #b9d6ff; border-radius:16px; padding:20px; text-align:center;">
+  <div style="font-size:2.4em;">📋</div>
+  <div style="font-weight:700; color:#1f3b66; margin-top:8px;">1. Definição de Requisitos</div>
+  <div style="font-size:0.82em; color:#3d557a; margin-top:8px;">Levantamento das necessidades do problema.</div>
+</div>
+
+<div style="font-size:2em; color:#5a7db0;">→</div>
+
+<div style="background:#e9fff6; border:1px solid #aee8cf; border-radius:16px; padding:20px; text-align:center;">
+  <div style="font-size:2.4em;">💻</div>
+  <div style="font-weight:700; color:#1f5a4a; margin-top:8px;">2. Desenvolvimento</div>
+  <div style="font-size:0.82em; color:#3b6e61; margin-top:8px;">Implementação, testes e ajustes do software.</div>
+</div>
+
+<div style="font-size:2em; color:#5a7db0;">→</div>
+
+<div style="background:#fff3e8; border:1px solid #ffd1a6; border-radius:16px; padding:20px; text-align:center;">
+  <div style="font-size:2.4em;">🚀</div>
+  <div style="font-weight:700; color:#7a4a1f; margin-top:8px;">3. Entrega</div>
+  <div style="font-size:0.82em; color:#7a5a3c; margin-top:8px;">Disponibilização para uso e coleta de feedback.</div>
+</div>
+
+</div>
+
+## Algoritmos e lógica de programação 
+
+- o software deve ser encarado como um produto de um processo bem definido e controlado de engenharia. 
+
+</br>
+
+- O estudo de algoritmos e de lógica de programação é essencial no contexto do processo de criação de um software. Ele está diretamente relacionado com a etapa de projeto de um software em que, mesmo sem saber qual será a linguagem de programação a ser utilizada, especifica-se completamente o software.   
+
+</br>
+
+- Dessa forma, o nosso curso tem como objetivo apresentar os principais conceitos de algoritmos e lógica de programação que serão utilizados ao longo do curso de estatística e ciência de dados. 

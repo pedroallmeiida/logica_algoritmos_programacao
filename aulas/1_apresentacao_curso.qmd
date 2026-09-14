@@ -66,8 +66,13 @@ editor:
 
 </br>
 
-1. Alice Zhao. *SQL - Guia Prático: um Guia Para o uso de SQL*. Novatec 4 Ed (2023). 
+- SZWARCFITER, Jayme Luiz; MARKENZON, Lilian. Estruturas de Dados e seus Algoritmos (3a. edição). Editora
+LTC, 2010.
 
+- MENEZES, Nilo Ney Coutinho. Introdução à programação com Python: algoritmos e lógica de programação
+para iniciantes. Novatec, 2010.
+
+- Souza, M.A.F; Gomes, M.M.; Soares, M.V.; Concilio R. Algoritmos e lógica de programação. Cengage 3 Ed.
 
 ## Avaliação 
 

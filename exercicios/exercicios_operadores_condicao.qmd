@@ -1,0 +1,24 @@
+---
+title: "Operadores de decisão"
+author: "Pedro Almeida"
+lang: pt-BR
+format:
+  html:
+    toc: true
+    code-fold: true
+    code-tools: true
+---
+
+### Exercícios sobre os operadores de decisão: if, elif, else
+
+
+1. Crie um programa que peça ao usuário para inserir a sua idade e verifique se ele é menor de idade, adulto ou idoso.
+2. Crie um programa que peça ao usuário para inserir dois números e diga qual deles é maior, ou se são iguais.
+3. Crie um programa que peça ao usuário para inserir uma temperatura e verifique se está frio, agradável ou quente.
+4. Crie um programa que peça um número inteiro e informe se ele é positivo, negativo ou igual a zero. Quando for positivo, informe também se ele é par ou ímpar.
+5. Crie um programa que peça o salário de um trabalhador e informe a faixa salarial à qual ele pertence: até R$ 1.500, de R$ 1.501 a R$ 3.000, ou acima de R$ 3.000.
+6. Crie um programa que calcula o desconto conforme a faixa de preço: compras acima de R$ 1000 recebem 15% de desconto; compras entre R$ 500 e R$ 1000 recebem 10%; compras entre R$ 200 e R$ 500 recebem 5%; as demais não recebem desconto.
+7. Crie um programa que informa se a pessoa pode votar. Considere que ela pode votar somente quando tiver idade maior ou igual a 16 anos e possuir título de eleitor.
+8. Crie um programa que pergunte ao cliente qual forma de pagamento ele deseja utilizar: Pix ou cartão. Se escolher Pix, pergunte se ele possui saldo suficiente. Informe que a compra foi aprovada quando o pagamento for feito com cartão ou quando o cliente escolher Pix e possuir saldo suficiente. Caso contrário, informe que a compra não foi aprovada.
+9. Crie um programa que peça a idade e informe se uma pessoa pode dirigir. Ela deve ter pelo menos 18 anos e não pode estar sem habilitação. Utilize `not` para representar a ausência de habilitação.
+10. Crie um programa que peça um nome de usuário e uma senha. Informe se o acesso foi autorizado somente quando o nome de usuário estiver correto e a senha estiver correta. Caso contrário, informe que o acesso foi negado.

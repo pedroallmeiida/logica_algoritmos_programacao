@@ -511,12 +511,10 @@ ser compreensível, verificável e adequada ao problema.
 
 <br/>
 
-1. Leia um número inteiro e informe se ele é positivo, negativo ou zero.
-2. Leia cinco números e informe o maior deles.
-3. Calcule a soma dos números pares de `1` a `100`.
-4. Leia números até que o usuário digite `0` e informe a soma dos valores.
-5. Escreva uma função que receba uma lista de notas e devolva a média.
-6. Modifique o programa da média para classificar o resultado em aprovado,
+1. Calcule a soma dos números pares de `1` a `100`.
+2. Leia números até que o usuário digite `0` e informe a soma dos valores.
+3. Escreva uma função que receba uma lista de notas e devolva a média.
+4. Modifique o programa da média para classificar o resultado em aprovado,
    recuperação ou reprovado.
 
 

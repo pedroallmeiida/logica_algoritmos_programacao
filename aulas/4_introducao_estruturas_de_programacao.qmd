@@ -1,0 +1,523 @@
+---
+title: |
+  <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;">
+    <img src="Marca_UEPB.png" alt="Logo UEPB" style="width:150px; height:auto;">
+    <span style="display:block;">Estruturas de Programação</span>
+  </div>
+title-slide-attributes:
+  data-background-color: "#f2f2f3"
+author: "Professor: Pedro M. Almeida-Junior"
+institute:  "Estatística e Ciência de Dados-UEPB"
+format: 
+  revealjs: 
+    width: 1000
+    margin: 0.1
+    logo: Marca_UEPB.png
+    theme: [default, hscroll.scss]
+    transition: slide
+    background-transition: fade
+    smaller: true
+    scrollable: true
+knitr:
+  opts_chunk:
+    message: false
+    warning: false
+css: hscroll.scss
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+---
+
+### Estrutura de programação
+
+<br/>
+
+Uma estrutura de programação define como as instruções de um algoritmo serão
+organizadas e executadas.
+
+As estruturas fundamentais e seus principais operadores em Portugol são:
+
+- **sequência:** instruções executadas em ordem. 
+- **decisão:** escolha entre caminhos possíveis. Em Portugol, utiliza
+  `se... então`, `senão se` e `senão`;
+- **repetição:** execução de um bloco várias vezes. Em Portugol, utiliza
+  `para`, `enquanto` e, em algumas linguagens, `repita... até`.
+
+---
+
+#### Exemplo da correspondência entre Portugol e Python:
+
+<br/>
+
+| Portugol | Python |
+|:---|:---|
+| `idade <- 18` | `idade = 18` |
+| `leia(idade)` | `idade = int(input())` |
+| `escreva(idade)` | `print(idade)` |
+| `se idade >= 18 então` | `if idade >= 18:` |
+| `enquanto idade < 21 faça` | `while idade < 21:` |
+
+
+---
+
+
+### valores e comparações
+
+<br/>
+
+Antes de combinar os principaires operadores de condições, é importante reconhecer os tipos de dados mais
+comuns e o resultado de uma comparação:
+
+| Tipo | Exemplo | Uso |
+|:---|:---:|:---|
+| `int` | `18` | números inteiros |
+| `float` | `7.5` | números com casas decimais |
+| `str` | `"Python"` | textos |
+| `bool` | `True` ou `False` | valores lógicos |
+
+---
+
+#### Exemplo python
+
+<br/>
+
+<br/>
+
+```python
+idade = 20
+maior_de_idade = idade >= 18
+
+print(maior_de_idade)  # True
+```
+
+<br/>
+
+O operador `>=` compara dois valores e produz um resultado booleano. Esse
+resultado pode ser usado diretamente para tomar uma decisão.
+
+---
+
+#### Operadores relacionais e lógicos
+
+Os operadores relacionais criam condições simples. Já os operadores lógicos
+combinam duas ou mais condições.
+
+<br/>
+
+<div style="font-size: 0.70em;">
+
+| Operador | Significado | Exemplo |
+|:---:|:---|:---|
+| `==` | igual a | `x == 10` |
+| `!=` | diferente de | `x != 10` |
+| `>` e `<` | maior e menor | `x > 10` |
+| `>=` e `<=` | maior ou igual e menor ou igual | `x >= 10` |
+| `and` | as duas condições são verdadeiras | `idade >= 18 and tem_documento == True` |
+| `or` | pelo menos uma condição é verdadeira | `pix or cartao` |
+| `not` | nega uma condição | `not bloqueado` |
+
+</div>
+
+---
+
+### Estrutura sequencial
+
+<br/>
+
+Na estrutura sequencial, as instruções são executadas uma após a outra, na ordem
+em que aparecem.
+
+<br/>
+
+```python
+base = 8
+altura = 5
+area = base * altura
+
+print(f"Área do retângulo: {area}")
+```
+O programa calcula `8 * 5` e exibe `Área do retângulo: 40`.
+
+<br/>
+
+**OBS:** Trocar a ordem das instruções pode alterar o resultado. A variável `area`, por
+exemplo, precisa ser calculada depois que `base` e `altura` recebem seus valores.
+
+---
+
+### Entrada, processamento e saída
+
+<br/>
+
+Um algoritmo sequencial geralmente pode ser descrito em três etapas:
+
+1. **Entrada:** obtenção dos dados;
+2. **Processamento:** transformação ou cálculo;
+3. **Saída:** apresentação do resultado.
+
+<br/>
+
+#### Exemplo Python
+
+```python
+raio = float(input("Digite o raio: "))
+area = 3.14159 * raio ** 2
+print(f"Área do círculo: {area:.2f}")
+```
+
+`input` sempre retorna texto. Por isso, usamos `float` para converter a entrada
+em um número real antes do cálculo.
+
+---
+
+###  Estrutura de decisão
+
+<br/>
+
+A decisão permite executar instruções diferentes de acordo com uma condição.
+
+<br/>
+
+#### Decisão simples: se... então
+
+Quando a condição é verdadeira, o bloco indentado é executado. Em Python, a
+palavra-chave `if` representa o **se**.
+
+##### Exemplo Python
+
+```python
+temperatura = 32
+
+if temperatura > 30:
+  print("Está quente")
+```
+
+<br/>
+
+**Obs:** Se a condição for Falsa, o programa continua depois do bloco.
+
+---
+
+### Decisão composta: se... então... senão
+
+<br/>
+
+Quando existem dois caminhos possíveis, usamos `else` para representar o **senão**.
+
+<br/>
+
+##### Exemplo Python
+
+```python
+nota = float(input("Digite a nota: "))
+
+if nota >= 7:
+  resultado = "Aprovado"
+else:
+  resultado = "Em recuperação"
+
+print(resultado)
+```
+
+A condição `nota >= 7` produz um valor lógico: `True` ou `False`. Ou seja, tanto faz colocar `if nota >= 7:` ou `if (nota >= 7) == True:`
+
+**Obs:** Em Python, os dois pontos (`:`) iniciam o bloco e a indentação indica quais
+instruções pertencem a cada alternativa.
+
+---
+
+#### Decisão encadeada: se... então... senão se... senão
+
+<br/>
+
+Quando há mais de duas possibilidades, usamos `elif`, que representa o **senão
+se**.
+
+
+##### Exemplo Python
+
+```python
+idade = int(input("Digite a idade: "))
+
+if idade < 12:
+  categoria = "infantil"
+elif idade < 18:
+  categoria = "juvenil"
+else:
+  categoria = "adulto"
+
+print(f"Categoria: {categoria}")
+```
+
+<br/>
+
+As condições são avaliadas de cima para baixo. O primeiro bloco cuja condição
+for verdadeira será executado. O `else` é opcional e trata o caso em que
+nenhuma condição anterior foi satisfeita.
+
+---
+
+### Decisão com várias opções
+
+<br/>
+
+Quando uma variável deve ser comparada com vários valores fixos, podemos usar
+`if` e `elif` de forma encadeada:
+
+<br/>
+
+##### Exemplo Python
+
+```python
+opcao = input("Digite A, B ou C: ").upper()
+
+if opcao == "A":
+  print("Você escolheu a opção A")
+elif opcao == "B":
+  print("Você escolheu a opção B")
+elif opcao == "C":
+  print("Você escolheu a opção C")
+else:
+  print("Opção inválida")
+```
+
+O programa executa no máximo um dos blocos da cadeia.
+
+---
+
+#### Combinando operadores lógicos e condições (if, elif e else)
+
+<br/>
+
+Podemos usar os operadores lógicos para combinar duas ou mais condições.
+
+<br/>
+
+##### Exemplo Python
+
+```python
+nota = 8
+frequencia = 0.8
+
+if nota >= 7 and frequencia >= 0.75:
+  print("Aprovado")
+else:
+  print("Não aprovado")
+```
+
+---
+
+### Estrutura de repetição
+
+<br/>
+
+A repetição executa um bloco de instruções várias vezes. Ela é útil quando uma
+ação precisa ser realizada para diversos valores ou enquanto uma condição for
+verdadeira.
+
+<br/>
+
+#### Repetição definida com `for`
+
+```python
+for numero in range(1, 6):
+  print(numero)
+```
+
+<br/>
+
+**OBS:** `range(1, 6)` produz os valores de `1` até `5`. 
+
+---
+
+### Acumuladores e contadores
+
+<br/>
+
+Um acumulador guarda um resultado que é atualizado a cada repetição.
+
+<br/>
+
+##### Exemplo Python
+
+```python
+soma = 0
+
+for numero in range(1, 6):
+  soma = soma + numero
+
+print(f"Soma: {soma}")
+```
+
+<br/>
+
+Neste exemplo, a variável `soma` assume sucessivamente os valores `1`, `3`,
+`6`, `10` e `15`.
+
+Um contador é um caso particular de acumulador, normalmente usado para contar
+ocorrências.
+
+---
+
+### Repetição condicionada com `while`
+
+<br/>
+
+O `while` repete um bloco enquanto uma condição for verdadeira.
+
+<br/>
+
+##### Exemplo Python
+
+```python
+senha = ""
+
+while senha != "python":
+  senha = input("Digite a senha: ")
+
+print("Acesso permitido")
+```
+
+<br/>
+
+**OBS:** É necessário garantir que a condição possa se tornar falsa. Caso contrário, o
+programa ficará preso em um *loop* infinito.
+
+---
+
+### Quando usar for ou while ?
+
+<br/>
+
+| Situação | Estrutura recomendada |
+|:---|:---:|
+| O número de repetições é conhecido | `for` |
+| É preciso percorrer uma sequência | `for` |
+| A repetição depende de uma condição | `while` |
+
+<br/>
+
+##### Exemplo Python
+
+```python
+numero = int(input("Digite um número positivo: "))
+
+while numero <= 0:
+  numero = int(input("Valor inválido. Digite novamente: "))
+
+print(f"Você digitou {numero}")
+```
+
+---
+
+### Estruturas aninhadas
+
+<br/>
+
+Uma estrutura pode aparecer dentro de outra. Essa composição permite representar
+problemas mais elaborados.
+
+<br/>
+
+##### Exemplo Python
+
+```python
+for numero in range(1, 11):
+  if numero % 2 == 0:
+    print(f"{numero} é par")
+```
+
+<br/>
+
+O `if` está aninhado no `for`: para cada número, o programa verifica se o resto
+da divisão por `2` é igual a zero.
+
+---
+
+### Exemplo: média de notas
+
+```python
+quantidade = int(input("Quantas notas serão informadas? "))
+soma = 0
+
+for indice in range(quantidade):
+  nota = float(input(f"Nota {indice + 1}: "))
+  soma += nota
+
+media = soma / quantidade
+
+if media >= 7:
+  situacao = "aprovado"
+else:
+  situacao = "reprovado"
+
+print(f"Média: {media:.1f}")
+print(f"Situação: {situacao}")
+```
+
+<br/>
+
+O exemplo combina as três estruturas: sequência para organizar as etapas,
+repetição para ler todas as notas e decisão para determinar a situação final.
+
+---
+
+### Funções: organizar e reutilizar algoritmos
+
+<br/>
+
+Uma função agrupa instruções que realizam uma tarefa. Ela pode receber dados por
+parâmetros e devolver um resultado com `return`.
+
+<br/>
+
+```python
+def calcular_media(nota1, nota2, nota3):
+  return (nota1 + nota2 + nota3) / 3
+
+
+media = calcular_media(7, 8, 9)
+print(f"Média: {media:.1f}")
+```
+
+<br/>
+
+As funções ajudam a dividir um problema em partes menores, evitar repetição de
+código e tornar o algoritmo mais fácil de testar.
+
+---
+
+### Estratégia para resolver problemas
+
+<br/>
+
+Antes de escrever o código:
+
+1. defina claramente o problema;
+2. identifique as entradas e as saídas;
+3. descreva o processamento em passos;
+4. escolha as estruturas de programação necessárias;
+
+<br/>
+
+OBS: Uma boa solução não é apenas aquela que produz uma resposta: ela também deve
+ser compreensível, verificável e adequada ao problema.
+
+---
+
+### Exercícios
+
+<br/>
+
+1. Leia um número inteiro e informe se ele é positivo, negativo ou zero.
+2. Leia cinco números e informe o maior deles.
+3. Calcule a soma dos números pares de `1` a `100`.
+4. Leia números até que o usuário digite `0` e informe a soma dos valores.
+5. Escreva uma função que receba uma lista de notas e devolva a média.
+6. Modifique o programa da média para classificar o resultado em aprovado,
+   recuperação ou reprovado.
+
+
+

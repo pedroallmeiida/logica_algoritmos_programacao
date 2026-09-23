@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">Problema da Torre de Hanoi</title>
+  <desc id="desc">Estado inicial com tres aneis na haste A e estado objetivo com os aneis transferidos para a haste B.</desc>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#1b2838" flood-opacity="0.16"/>
+    </filter>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#eef3f5"/>
+    </linearGradient>
+    <linearGradient id="redRing" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e95d5d"/>
+      <stop offset="1" stop-color="#b8323e"/>
+    </linearGradient>
+    <linearGradient id="goldRing" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4c95d"/>
+      <stop offset="1" stop-color="#d89524"/>
+    </linearGradient>
+    <linearGradient id="blueRing" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4ea6c8"/>
+      <stop offset="1" stop-color="#23718f"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="520" rx="24" fill="url(#background)"/>
+  <path d="M48 420H1152" stroke="#bdc9ce" stroke-width="4" stroke-linecap="round"/>
+  <path d="M48 431H1152" stroke="#dce4e7" stroke-width="10" stroke-linecap="round"/>
+
+  <text x="600" y="48" text-anchor="middle" font-family="Georgia, serif" font-size="30" font-weight="700" fill="#263746">Torre de Hanoi</text>
+  <text x="600" y="78" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#60727a">Mover todos os aneis de A para B usando C</text>
+
+  <g font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#263746">
+    <text x="180" y="470" text-anchor="middle">A</text>
+    <text x="600" y="470" text-anchor="middle">B</text>
+    <text x="1020" y="470" text-anchor="middle">C</text>
+  </g>
+
+  <g stroke="#263746" stroke-linecap="round">
+    <path d="M180 150V420M600 150V420M1020 150V420" stroke-width="12"/>
+    <path d="M92 420H268M512 420H688M932 420H1108" stroke-width="15"/>
+  </g>
+
+  <g filter="url(#shadow)" stroke="#ffffff" stroke-width="3">
+    <rect x="95" y="352" width="170" height="62" rx="22" fill="url(#redRing)"/>
+    <rect x="115" y="292" width="130" height="62" rx="22" fill="url(#goldRing)"/>
+    <rect x="135" y="232" width="90" height="62" rx="22" fill="url(#blueRing)"/>
+  </g>
+
+  <path d="M318 320H470" stroke="#9aaeb5" stroke-width="3" stroke-dasharray="10 10"/>
+  <path d="M448 302L470 320L448 338" fill="none" stroke="#9aaeb5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="394" y="292" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#6c7e84">transferir</text>
+
+  <g filter="url(#shadow)" stroke="#ffffff" stroke-width="3">
+    <rect x="515" y="352" width="170" height="62" rx="22" fill="url(#redRing)"/>
+    <rect x="535" y="292" width="130" height="62" rx="22" fill="url(#goldRing)"/>
+    <rect x="555" y="232" width="90" height="62" rx="22" fill="url(#blueRing)"/>
+  </g>
+
+  <g font-family="Arial, sans-serif" font-size="15" fill="#60727a">
+    <text x="180" y="125" text-anchor="middle">estado inicial</text>
+    <text x="600" y="125" text-anchor="middle">estado objetivo</text>
+    <text x="1020" y="125" text-anchor="middle">haste auxiliar</text>
+  </g>
+</svg>

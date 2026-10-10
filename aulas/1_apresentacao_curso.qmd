@@ -18,10 +18,6 @@ format:
     background-transition: fade
     smaller: true
     scrollable: true
-knitr:
-  opts_chunk:
-    message: false
-    warning: false
 css: hscroll.scss
 editor: 
   markdown: 

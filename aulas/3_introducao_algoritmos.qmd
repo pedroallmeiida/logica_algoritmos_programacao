@@ -18,10 +18,6 @@ format:
     background-transition: fade
     smaller: true
     scrollable: true
-knitr:
-  opts_chunk:
-    message: false
-    warning: false
 css: hscroll.scss
 editor: 
   markdown: 
@@ -200,4 +196,3 @@ FimAlgoritmo
 
 Nesse exemplo, a sintaxe organiza a escrita do algoritmo, enquanto a semântica
 explica o efeito de cada instrução e o resultado produzido.
-

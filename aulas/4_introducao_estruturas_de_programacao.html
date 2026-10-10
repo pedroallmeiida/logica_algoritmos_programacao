@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.4.551">
 
   <meta name="author" content="Professor: Pedro M. Almeida-Junior">
-  <title>quarto-input5b7761ed</title>
+  <title>quarto-input36308cd6</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -837,6 +837,28 @@ Professor: Pedro M. Almeida-Junior
 <li>Escreva uma função que receba uma lista de notas e devolva a média.</li>
 <li>Modifique o programa da média para classificar o resultado em aprovado, recuperação ou reprovado.</li>
 </ol>
+</section>
+<section class="slide level2">
+
+<h3 id="comandos-break-e-continue">Comandos <code>break</code> e <code>continue</code></h3>
+<p><br></p>
+<p>O comando <code>break</code> interrompe imediatamente o laço de repetição. Já o comando <code>continue</code> ignora o restante da repetição atual e passa para a próxima.</p>
+<p><br></p>
+<h5 id="break-interromper-o-laço"><code>break</code>: interromper o laço</h5>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href=""></a><span class="cf">for</span> numero <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>):</span>
+<span id="cb16-2"><a href=""></a>    <span class="cf">if</span> numero <span class="op">==</span> <span class="dv">6</span>:</span>
+<span id="cb16-3"><a href=""></a>        <span class="cf">break</span></span>
+<span id="cb16-4"><a href=""></a>    <span class="cf">else</span>:</span>
+<span id="cb16-5"><a href=""></a>        <span class="bu">print</span>(numero)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Nesse exemplo, o laço para quando encontra o número <code>6</code>.</p>
+<p><br></p>
+<h5 id="continue-pular-uma-repetição"><code>continue</code>: pular uma repetição</h5>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href=""></a><span class="cf">for</span> numero <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>):</span>
+<span id="cb17-2"><a href=""></a>    <span class="cf">if</span> numero <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb17-3"><a href=""></a>        <span class="cf">continue</span></span>
+<span id="cb17-4"><a href=""></a>    <span class="cf">else</span>:</span>
+<span id="cb17-5"><a href=""></a>        <span class="bu">print</span>(numero)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Nesse exemplo, os números pares são ignorados e apenas os ímpares são exibidos.</p>
 <div class="quarto-auto-generated-content">
 <p><img src="Marca_UEPB.png" class="slide-logo"></p>
 <div class="footer footer-default">
@@ -1054,82 +1076,6 @@ Professor: Pedro M. Almeida-Junior
         ]
       });
     </script>
-    
-
-    <script>
-
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-
-      // slide changes (different for each slide format).
-
-      (function () {
-
-        // dispatch for htmlwidgets
-
-        function fireSlideEnter() {
-
-          const event = window.document.createEvent("Event");
-
-          event.initEvent("slideenter", true, true);
-
-          window.document.dispatchEvent(event);
-
-        }
-
-    
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-
-          fireSlideEnter();
-
-    
-
-          // dispatch for shiny
-
-          if (window.jQuery) {
-
-            if (previousSlide) {
-
-              window.jQuery(previousSlide).trigger("hidden");
-
-            }
-
-            if (currentSlide) {
-
-              window.jQuery(currentSlide).trigger("shown");
-
-            }
-
-          }
-
-        }
-
-    
-
-        // hookup for slidy
-
-        if (window.w3c_slidy) {
-
-          window.w3c_slidy.add_observer(function (slide_num) {
-
-            // slide_num starts at position 1
-
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-
-          });
-
-        }
-
-    
-
-      })();
-
-    </script>
-
-    
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

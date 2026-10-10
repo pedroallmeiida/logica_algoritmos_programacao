@@ -1,0 +1,471 @@
+---
+title: |
+  <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;">
+    <img src="Marca_UEPB.png" alt="Logo UEPB" style="width:150px; height:auto;">
+    <span style="display:block;">Estruturas de Dados</span>
+  </div>
+title-slide-attributes:
+  data-background-color: "#f2f2f3"
+author: "Professor: Pedro M. Almeida-Junior"
+institute:  "Estatística e Ciência de Dados-UEPB"
+format:
+  revealjs:
+    width: 1000
+    margin: 0.1
+    logo: Marca_UEPB.png
+    theme: [default, hscroll.scss]
+    transition: slide
+    background-transition: fade
+    smaller: true
+    scrollable: true
+css: hscroll.scss
+header-includes:
+  - |
+    <style>
+      .reveal pre code {
+        font-size: 1.5em;
+      }
+    </style>
+editor:
+  markdown:
+    wrap: 72
+---
+
+---
+
+
+### O que é uma estrutura de dados?
+
+</br>
+
+Uma estrutura de dados é uma forma de organizar um ou mais valores para que
+um programa possa trabalhar com eles. 
+
+<br>
+
+
+:::: {.columns}
+::: {.column width="50%"}
+**Lista — sequência alterável**
+
+`["Ana", "Bia", "Caio"]`
+:::
+::: {.column width="50%"}
+**Tupla — sequência fixa**
+
+`(-7.1, 10.6, -34.9, 'python')`
+:::
+::::
+
+<br>
+
+
+:::: {.columns}
+::: {.column width="50%"}
+**Dicionário — pares chave e valor**
+
+`{"nome": "Ana", "nota": 8.5}`
+:::
+::: {.column width="50%"}
+**Conjunto — valores únicos**
+
+`{"Ana", "Bia", "Caio"}`
+:::
+::::
+
+---
+
+
+### Exemplo Python de uma lista
+
+Em vez de criar uma variável para cada nota, podemos reunir todas as notas em uma lista.
+
+```python
+nota_1 = 8.5
+nota_2 = 7.0
+nota_3 = 9.0
+
+notas = [8.5, 7.0, 9.0]
+tamanho = len(notas) # tamanho da lista de notas
+print(f"Lista das notas: {notas}")
+print(f"Quantidade de notas: {tamanho}")
+```
+
+A lista guarda os três valores em uma única variável e a função `len()` informa quantos
+elementos estão armazenados.
+
+---
+
+### Como escolher uma estrutura?
+
+<br>
+
+Considere o tipo de operação que o programa precisa fazer:
+
+<br>
+
+- **Lista (`list`):** manter uma sequência que pode ser alterada.
+- **Tupla (`tuple`):** agrupar valores que não devem ser alterados.
+- **Dicionário (`dict`):** localizar valores por uma chave, como o nome de um
+  campo.
+- **Conjunto (`set`):** armazenar valores únicos e testar pertencimento.
+
+---
+
+### Exemplo Python
+
+<br>
+
+<br>
+
+```python
+fila = ["Ana", "Bia", "Caio"]   # sequência de pessoas
+coordenada = (-7.1, -34.9)   # par de valores fixos
+aluno = {"nome": "Ana", "nota": 8.5} # campos identificados por chaves
+presencas = {"Ana", "Bia", "Ana"} # "Ana" repetida é guardada uma vez
+
+print(fila[0], coordenada[0], aluno["nome"], len(presencas))
+```
+
+---
+
+#### Listas
+
+<br>
+
+Uma lista mantém os elementos em uma ordem. Ela pode conter valores do mesmo
+tipo ou de tipos diferentes e pode crescer, diminuir ou ter seus elementos
+modificados.
+
+<br>
+
+```python
+frutas = ["maçã", "banana", "laranja"]
+frutas.append("uva") # adicionar novos valores
+frutas[1] = "pera" ## substitui a fruta da posição 1
+
+print(frutas)
+```
+
+
+---
+
+### Índices e partes de uma lista
+
+<br>
+
+- O primeiro elemento de uma sequência tem índice `0`. Índices negativos
+contam a partir do final. 
+
+```python
+temperaturas = [21, 23, 19, 25, 22]
+print(temperaturas[0])     # primeiro valor: 21
+print(temperaturas[-1])    # último valor: 22
+```
+
+<br>
+
+- Para selecionar partes de uma lista:
+
+```python
+print(temperaturas[1:4])   # índices 1, 2 e 3: [23, 19, 25]
+```
+
+
+---
+
+### Operações comuns com listas
+
+<br>
+
+Além de acrescentar elementos, podemos remover valores e calcular
+informações sobre uma lista de números.
+
+```python
+tempos = [12.4, 11.8, 13.1]
+tempos.append(12.0)
+tempos.remove(13.1)
+
+print(f"Tempos: {tempos}")
+print(f"Quantidade: {len(tempos)}")
+```
+
+---
+
+### Percorrendo uma lista
+
+<br>
+
+Um laço `for` visita os elementos na ordem em que aparecem. Isso permite
+executar o mesmo processamento para cada valor.
+
+```python
+notas = [8.5, 6.0, 9.0]
+
+for nota in notas:
+    if nota >= 7:
+        print(f"{nota}: aprovado")
+    else:
+        print(f"{nota}: recuperação")
+```
+
+Use `for elemento in lista` quando precisar processar cada elemento. Não é
+necessário controlar manualmente o índice nesse caso.
+
+---
+
+### Tuplas
+
+<br>
+
+Uma tupla é uma sequência ordenada, mas não permite substituir, adicionar ou
+remover elementos depois de criada. Ela é útil para representar um grupo fixo
+de valores.
+
+<br>
+
+```python
+coordenada = (-7.12, -34.88)
+latitude, longitude = coordenada
+
+print(f"Latitude: {latitude}")
+print(f"Longitude: {longitude}")
+```
+
+<br>
+
+Assim como listas, tuplas usam índices começando em `0`. A atribuição
+`latitude, longitude = coordenada` distribui os elementos em duas variáveis.
+
+---
+
+### Dicionários: valores identificados por chaves
+
+
+<br>
+
+Um dicionário associa cada chave a um valor. As chaves permitem acessar um
+dado pelo seu significado, em vez de depender da posição em uma sequência.
+
+```python
+aluno = {
+    "nome": "Ana",
+    "curso": "Estatística",
+    "nota": 8.5,
+}
+
+print(aluno["nome"])
+print(aluno["nota"])
+```
+
+Neste exemplo, `"nome"`, `"curso"` e `"nota"` são chaves. Os textos e o número
+associados a elas são os valores.
+
+---
+
+### Consultando e adicionando um dicionário
+
+<br>
+
+Para adicionar um novo campo, atribua um valor usando a nova chave entre
+colchetes:
+
+```python
+aluno["curso"] = "Estatística"
+print(aluno["curso"])
+```
+
+Agora, o dicionário contém a chave `"curso"` associada ao valor
+`"Estatística"`.
+
+---
+
+#### Quando a chave não existe no dicionário
+
+<br>
+
+Considere acessar uma chave que não existe. A saída irá retornar um erro.
+
+<br>
+
+```python
+print(aluno["idade"])
+
+----------------------------------------------------------
+KeyError                         Traceback (most recent call last)
+Cell In[10], line 1
+----> 1 print(aluno["idade"])
+
+KeyError: 'idade'
+```
+
+
+
+---
+
+
+### Método get()
+
+
+No método `get(chave, valor_padrao)`, o primeiro argumento é a chave
+que queremos consultar e o segundo é o valor usado caso essa chave não
+esteja no dicionário.
+
+<br>
+
+```python
+aluno = {"nome": "Ana", "nota": 8.5}
+
+aluno["nota"] = 9.0
+aluno["aprovado"] = aluno["nota"] >= 7
+idade = aluno.get("idade", "não informada")
+
+print(aluno)
+print(f"Idade: {idade}")
+```
+
+<br>
+
+O dicionário não tem a chave `"idade"`. Por isso, `get()` retorna
+`"não informada"` e guarda esse resultado na variável `idade`. 
+
+
+---
+
+### Percorrendo um dicionário
+
+<br>
+
+O método `items()` fornece cada par de chave e valor. Assim podemos examinar
+todos os campos de um registro.
+
+<br>
+
+```python
+produto = {"nome": "caderno", "preco": 18.5, "estoque": 12}
+
+for chave, valor in produto.items():
+    print(f"{chave}: {valor}")
+```
+
+<br>
+
+Em cada repetição, `chave` recebe o nome do campo e `valor` recebe o dado
+associado a ele.
+
+---
+
+### Conjuntos: elementos sem repetição
+
+<br>
+
+Um conjunto (`set`) mantém apenas valores únicos. Ele é útil para remover
+duplicatas ou verificar se um elemento pertence a um grupo. Conjuntos não
+possuem índices nem uma ordem para acesso posicional.
+
+<br>
+
+```python
+inscricoes = ["Ana", "Bia", "Ana", "Caio", "Bia"]
+participantes = set(inscricoes)
+
+print(f"Inscrições: {len(inscricoes)}")
+print(f"Participantes únicos: {len(participantes)}")
+print("Ana está inscrita?", "Ana" in participantes)
+```
+
+<br>
+
+A conversão para `set` elimina nomes repetidos. A ordem dos elementos
+exibidos por um conjunto não deve ser usada como referência.
+
+---
+
+### Operações entre conjuntos
+
+<br>
+
+Conjuntos podem representar grupos e permitir comparações entre eles.
+`&` calcula a interseção e `|` calcula a união.
+
+<br>
+
+```python
+turma_python = {"Ana", "Bia", "Caio"}
+turma_estatistica = {"Bia", "Caio", "Davi"}
+
+print("Nas duas turmas:", turma_python & turma_estatistica)
+print("Em pelo menos uma turma:", turma_python | turma_estatistica)
+```
+
+<br>
+
+A interseção contém os elementos presentes nos dois conjuntos; a união
+contém todos os elementos, sem repetições.
+
+---
+
+### Estruturas Combinadas
+
+<br>
+
+Uma lista pode guardar vários dicionários. Essa combinação representa uma
+coleção de registros, como uma tabela de alunos.
+
+```python
+alunos = [
+    {"nome": "Ana", "nota": 8.5},
+    {"nome": "Bia", "nota": 6.0},
+    {"nome": "Caio", "nota": 9.0},
+]
+
+for aluno in alunos:
+    situacao = "aprovado" if aluno["nota"] >= 7 else "recuperação"
+    print(f"{aluno['nome']}: {aluno['nota']} - {situacao}")
+```
+
+Cada dicionário representa um aluno; a lista reúne todos os registros e
+permite percorrê-los com um laço.
+
+---
+
+#### Exemplo Python
+
+<br>
+
+<br>
+
+```python
+lista = ["A", "A", "B"]
+tupla = ("A", "A", "B")
+dicionario = {"primeiro": "A", "segundo": "B"}
+conjunto = {"A", "A", "B"}
+
+## Tamanhos
+
+print(len(lista), len(tupla), len(dicionario), len(conjunto))
+```
+
+---
+
+### Exemplo:
+
+Considere uma lista de notas. Calcule a média, conte quantas notas são
+maiores ou iguais a `7` e apresente a situação de cada nota.
+
+```python
+notas = [8.0, 5.5, 7.0, 9.5]
+media = sum(notas) / len(notas)
+aprovadas = 0
+
+for nota in notas:
+    if nota >= 7:
+        aprovadas += 1
+    print(f"{nota}: {'aprovada' if nota >= 7 else 'abaixo de 7'}")
+
+print(f"Média da turma: {media:.2f}")
+print(f"Notas maiores ou iguais a 7: {aprovadas}")
+```
+
+**exercício:** altere a lista e verifique como mudam a média e a quantidade de
+notas aprovadas. Por exemplo, mude a nota na posição 1 e 3 e recalcule o programa. 

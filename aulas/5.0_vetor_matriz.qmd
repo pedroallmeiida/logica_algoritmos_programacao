@@ -1,0 +1,442 @@
+---
+title: |
+  <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;">
+    <img src="Marca_UEPB.png" alt="Logo UEPB" style="width:150px; height:auto;">
+    <span style="display:block;">Vetores e Matrizes</span>
+  </div>
+title-slide-attributes:
+  data-background-color: "#f2f2f3"
+author: "Professor: Pedro M. Almeida-Junior"
+institute:  "Estatística e Ciência de Dados-UEPB"
+format:
+  revealjs:
+    width: 1000
+    margin: 0.1
+    logo: Marca_UEPB.png
+    theme: [default, hscroll.scss]
+    transition: slide
+    background-transition: fade
+    smaller: true
+    scrollable: true
+css: hscroll.scss
+header-includes:
+  - |
+    <style>
+      .reveal pre code {
+        font-size: 1.5em;
+      }
+    </style>
+editor:
+  markdown:
+    wrap: 72
+---
+
+
+## Vetor
+
+<br>
+
+- Estrutura que armazena **vários valores** em uma única variável.
+- Cada elemento ocupa uma posição, chamada de **índice**.
+- Em Python, o índice começa em **0**. Em outras linguagens, como R, o índice começa com 1. 
+- Em Python, vetores são representados por **listas** (`list`).
+
+| Índice | 0  | 1  | 2  | 3  | 4  |
+|--------|----|----|----|----|----|
+| Valor  | 10 | 20 | 30 | 40 | 50 |
+
+---
+
+### Criando um vetor
+
+<br>
+
+```python
+notas = [7.5, 8.0, 6.5, 9.0, 10.0]
+nomes = ["Ana", "Bruno", "Carla"]
+vazio = []
+
+print(notas)
+print(len(notas))   # quantidade de elementos
+```
+
+---
+
+### Acessando elementos
+
+<br>
+
+```python
+notas = [7.5, 8.0, 6.5, 9.0, 10.0]
+
+print(notas[0])     # primeiro: 7.5
+print(notas[2])     # terceiro: 6.5
+print(notas[-1])    # último: 10.0
+print(notas[1:4])   # parte: [8.0, 6.5, 9.0]
+```
+
+<br>
+
+Acessar um índice inexistente gera `IndexError`:
+
+```python
+print(notas[10])
+```
+
+---
+
+### Modificando um vetor
+
+<br>
+
+```python
+notas = [7.5, 8.0, 6.5]
+
+notas[0] = 9.0          # altera um elemento
+notas.append(10.0)      # adiciona no final
+notas.insert(1, 5.0)    # insere na posição 1
+notas.remove(6.5)       # remove pelo valor
+ultimo = notas.pop()    # remove o ultimo valor e guarda o valor
+
+print(notas)
+```
+
+---
+
+### Percorrendo um vetor
+
+<br>
+
+```python
+notas = [7.5, 8.0, 6.5, 9.0]
+
+# Pelo valor
+for nota in notas:
+    print(nota)
+
+# Pelo índice
+for i in range(len(notas)):
+    print(f"notas[{i}] = {notas[i]}")
+```
+
+---
+
+### Operações comuns em vetores
+
+<br>
+
+
+```python
+notas = [7.5, 8.0, 6.5, 9.0, 10.0]
+
+print(sum(notas))                 # soma
+print(sum(notas) / len(notas))    # média
+print(max(notas), min(notas))     # maior e menor
+print(sorted(notas))              # ordenado (nova lista)
+print(8.0 in notas)               # busca: True
+```
+
+---
+
+### Exemplo: lendo valores do usuário
+
+<br>
+
+
+```python
+n = int(input("Quantas notas? "))
+notas = []
+
+for i in range(n):
+    nota = float(input(f"Nota {i + 1}: "))
+    notas.append(nota)
+
+media = sum(notas) / n
+print(f"Média: {media:.2f}")
+
+for nota in notas:
+    if nota > media:
+        print(f"{nota} está acima da média")
+```
+
+---
+
+### Exemplo: busca de um valor no vetor
+
+<br>
+
+```python
+numeros = [4, 8, 15, 16, 23, 42]
+alvo = 16
+posicao = -1
+
+for i in range(len(numeros)):
+    if numeros[i] == alvo:
+        posicao = i
+        break
+
+if posicao != -1:
+    print(f"Encontrado na posição {posicao}")
+else:
+    print("Não encontrado")
+```
+
+---
+
+## Matriz
+
+<br>
+
+- Vetor de vetores: uma tabela com **linhas** e **colunas**.
+- Cada elemento é acessado por **dois índices**: `matriz[linha][coluna]`.
+
+|          | Coluna 0 | Coluna 1 | Coluna 2 |
+|----------|----------|----------|----------|
+| Linha 0  | 1        | 2        | 3        |
+| Linha 1  | 4        | 5        | 6        |
+| Linha 2  | 7        | 8        | 9        |
+
+---
+
+### Criando e acessando uma matriz
+
+
+```python
+## Criando a matriz
+matriz = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+]
+
+## acessando os valores da matriz
+print(matriz[0][0])   
+print(matriz[1][2])   
+print(matriz[2, :])      
+## verificando o tamanho da matriz
+linhas = len(matriz)
+colunas = len(matriz[0])
+print(linhas, colunas)  
+
+# Visualizar a segunda coluna
+coluna = 1
+
+for linha in matriz:
+    print(linha[coluna])
+```
+
+---
+
+### Percorrendo uma matriz
+
+<br>
+
+
+```python
+matriz = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+]
+
+for i in range(len(matriz)):
+    for j in range(len(matriz[i])):
+        print(matriz[i][j], end=" ")
+    print()
+```
+
+---
+
+### Criando uma matriz vazia
+
+:::: {.columns}
+
+::: {.column width="50%"}
+Forma 1: 
+
+```python
+linhas, colunas = 3, 4
+
+matriz = [
+[None for i in range(colunas)] 
+for i in range(linhas)
+]
+print(matriz)
+```
+:::
+
+::: {.column width="50%"}
+Forma 2: 
+
+```python
+matriz = []
+
+for i in range(linhas):
+    linha = []
+
+    for j in range(colunas):
+        linha.append(None)
+
+    matriz.append(linha)
+
+print(matriz)
+```
+:::
+
+::::
+
+---
+
+#### Exemplo: soma por linha, coluna e diagonal
+
+```python
+matriz = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+]
+
+for i in range(3):
+    print(f"Soma da linha {i}: {sum(matriz[i])}")
+
+for j in range(3):
+    soma = 0
+    for i in range(3):
+        soma += matriz[i][j]
+    print(f"Soma da coluna {j}: {soma}")
+
+diagonal = sum(matriz[i][i] for i in range(3))
+print(f"Diagonal principal: {diagonal}")
+```
+
+---
+
+### Exemplo: soma de duas matrizes
+
+<br>
+
+```python
+A = [[1, 2], [3, 4]]
+B = [[5, 6], [7, 8]]
+C = [[0, 0], [0, 0]]
+
+for i in range(2):
+    for j in range(2):
+        C[i][j] = A[i][j] + B[i][j]
+
+print(C)
+```
+
+---
+
+# Biblioteca Numpy
+
+## Vetores com numpy
+
+<br>
+
+Arrays com **tipo único**, mais rápidos e com operações vetorizadas.
+
+<br>
+
+Importando a biblioteca numpy:
+
+```Python
+import numpy as np
+```
+
+---
+
+### Exemplo: matriz transposta
+
+<br>
+
+
+```python
+
+A = np.array([
+    [1, 2, 3],
+    [4, 5, 6],
+])
+
+T = np.transpose(A)
+
+print(T)  
+```
+
+---
+
+
+
+### Vetor com NumPy
+
+<br>
+
+
+```python
+# importando a biblioteca
+import numpy as np
+
+## criando o vetor com a funcao array
+v = np.array([1, 2, 3, 4, 5])
+
+## operacoes com vetor
+print(v * 2)      
+print(v + 10)      
+print(v.mean())  
+print(v.sum())   
+print(v[v > 2])
+```
+
+---
+
+### Matriz com NumPy
+
+<br>
+
+```python
+## importando a biblioteca
+import numpy as np
+
+## Criando as matrizes
+A = np.array([[1, 2], [3, 4]])
+B = np.array([[5, 6], [7, 8]])
+
+
+## operacoes com matrizes
+print(A.shape)  
+print(A + B)         # soma elemento a elemento
+print(A * B)         # produto elemento a elemento
+print(A @ B)         # produto matricial
+print(A.T)           # transposta
+print(A.sum(axis=0)) # soma por coluna: [4 6]
+print(A.sum(axis=1)) # soma por linha:  [3 7]
+```
+
+---
+
+### Criando arrays rapidamente
+
+<br>
+
+```python
+import numpy as np
+
+print(np.zeros((2, 3)))        # matriz de zeros
+print(np.ones((2, 2)))         # matriz de uns
+print(np.eye(3))               # matriz identidade
+print(np.arange(0, 10, 2))     # [0 2 4 6 8]
+```
+
+
+---
+
+## Exercícios
+
+1. Crie um vetor com 5 números e mostre o maior, o menor e a média.
+2. Dado um vetor, mostre-o em ordem inversa.
+3. Conte quantos elementos pares existem em um vetor.
+4. Leia uma matriz 3x3 e mostre a soma da diagonal principal e secundária.
+5. Dada uma matriz de notas (alunos x provas), calcule a média de cada aluno.
+6. Multiplique duas matrizes 2x2 usando laços e confira com NumPy (`@`).
+

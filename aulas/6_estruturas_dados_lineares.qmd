@@ -31,7 +31,27 @@ editor:
     wrap: 72
 ---
 
----
+------------------------------------------------------------------------
+
+### Estruturas de dados lineares
+
+<br>
+
+**Estruturas de dados lineares** organizam seus elementos em uma
+sequência, na qual cada elemento ocupa uma posição definida e, em geral,
+mantém relação com seu antecessor e seu sucessor.
+
+Exemplos de estruturas lineares:
+
+-   listas;
+-   pilhas;
+-   filas;
+-   deques.
+
+Nessas estruturas, os elementos são percorridos seguindo uma única
+dimensão lógica de organização.
+
+------------------------------------------------------------------------
 
 ### Tipos Abstratos de Dados (TAD)
 
@@ -39,105 +59,113 @@ editor:
 
 Um Tipo Abstrato de Dados (TAD) define:
 
-- os dados que uma estrutura representa;
-- as operações permitidas sobre esses dados;
-- o comportamento esperado dessas operações.
+-   os dados que uma estrutura representa;
+-   as operações permitidas sobre esses dados;
+-   o comportamento esperado dessas operações.
 
 **Exemplo: TAD Pilha**
 
-- **Dados:** uma sequência de elementos organizada pelo princípio LIFO
-  (*last in, first out*);
-- **Operações:** `empilhar`, `desempilhar` e `consultar_topo`;
-- **Comportamento:** o último elemento inserido deve ser o primeiro
-  elemento removido.
+-   **Dados:** uma sequência de elementos organizada pelo princípio LIFO
+    (*last in, first out*);
+-   **Operações:** `empilhar`, `desempilhar` e `consultar_topo`;
+-   **Comportamento:** o último elemento inserido deve ser o primeiro
+    elemento removido.
 
----
-
-### Estruturas de dados lineares
-
-<br>
-
-**Estruturas de dados lineares** organizam seus elementos em uma sequência,
-na qual cada elemento ocupa uma posição definida e, em geral, mantém
-relação com seu antecessor e seu sucessor.
-
-Exemplos de estruturas lineares:
-
-- listas;
-- pilhas;
-- filas;
-- deques.
-
-Nessas estruturas, os elementos são percorridos seguindo uma única
-dimensão lógica de organização.
-
----
+------------------------------------------------------------------------
 
 
-### Pilhas
+## Pilhas
 
 <br>
 
+
+
+::: columns
+::: {.column width="40%"}
+::: {style="background: rgba(78, 93, 181, 0.1); backdrop-filter: blur(10px); border-radius: 10px; padding: 10px; border: 1px solid rgba(100, 87, 108, 0.3);"}
 Uma pilha segue o princípio **LIFO**: o último elemento inserido é o
 primeiro a ser removido.
 
 Um exemplo cotidiano é uma pilha de livros. Para retirar um livro do
 meio, é necessário retirar primeiro os livros que estão acima dele.
+:::
+:::
+
+::: {.column width="60%"}
+![](figuras/pilhas_livros.png){width="100%" height="auto"}
+:::
+:::
+
+
+--- 
+
+### Exemplo Pilhas (Python)
+
+<br>
 
 Em Python, podemos usar `append` para empilhar e `pop` para desempilhar:
 
-```python
+``` python
 pilha = []
 
 pilha.append("Livro A")  # empilhar
 pilha.append("Livro B")
 pilha.append("Livro C")
 
-livro = pilha.pop()      # desempilhar: Livro C
+livro = pilha.pop()      # desempilhar
 print(livro)
 print(pilha)
 ```
-
 ---
 
 ### Operações com pilhas
 
 <br>
 
-```python
+``` python
 pilha = []
 
 pilha.append(10)
 pilha.append(20)
 
-if pilha:
-    topo = pilha[-1]     # consulta o topo sem remover
-    print(topo)
+# consulta o topo sem remover
+topo = pilha[-1]     
+print(topo)
 
-if pilha:
-    valor = pilha.pop()   # remove o elemento do topo
-    print(valor)
+# remove o elemento do topo
+valor_topo = pilha.pop()   
+print(valor_topo)
 ```
-
-O teste `if pilha` evita tentar remover um elemento de uma pilha vazia.
-
 ---
 
 ### Filas
 
+
+- Uma fila segue o princípio **FIFO (First in, First out) **: o primeiro elemento inserido é o
+primeiro a ser removido.
+
+- Um exemplo cotidiano é uma fila de atendimento. A pessoa que chega
+primeiro deve ser atendida primeiro.
+
+
 <br>
 
 
-Uma fila segue o princípio **FIFO**: o primeiro elemento inserido é o
-primeiro a ser removido.
+![](figuras/fila_exemplo.png){width="80%" height="auto"}
 
-Um exemplo cotidiano é uma fila de atendimento. A pessoa que chega
-primeiro deve ser atendida primeiro.
+---
+
+
+### Exemplo Filas (Python)
+
+<br>
 
 Para implementar uma fila de forma adequada, utilizamos `deque`, da
 biblioteca padrão `collections`:
 
-```python
+<br>
+
+``` python
 from collections import deque
 
 fila = deque()
@@ -151,41 +179,49 @@ print(pessoa)
 print(fila)
 ```
 
----
+------------------------------------------------------------------------
 
 ### Operações com filas
 
 <br>
 
-
-```python
+``` python
 from collections import deque
 
 fila = deque(["Ana", "Bia"])
 
 fila.append("Caio")      # enfileirar
 
-if fila:
-    proxima = fila.popleft()  # desenfileirar
-    print(f"Atendendo: {proxima}")
 
+proxima = fila.popleft()  # desenfileirar
+print(f"Atendendo: {proxima}")
 print(fila)
 ```
+<br>
 
-O `deque` permite inserir no final e remover no início sem deslocar
+**OBS:** O `deque` permite inserir no final e remover no início sem deslocar
 todos os demais elementos.
 
----
+------------------------------------------------------------------------
 
 ### Deques
 
 <br>
 
-
 O deque (*double-ended queue*) é uma fila de duas extremidades. Ele
 permite inserir e remover elementos tanto no início quanto no final.
 
-```python
+<br>
+
+![](figuras/deques.png){width="80%" height="auto"}
+
+---
+
+### Exemplos Deque (Python)
+
+<br>
+
+``` python
 from collections import deque
 
 deque_numeros = deque([2, 3])
@@ -200,19 +236,48 @@ print(inicio, final)
 print(deque_numeros)
 ```
 
----
+------------------------------------------------------------------------
 
 ### Comparação entre as estruturas
 
 <br>
 
+| Estrutura | Regra principal              | Operações comuns                          |
+|------------------------|------------------------|------------------------|
+| Lista     | sequência indexada e mutável | acessar, inserir e remover                |
+| Pilha     | LIFO                         | `append` e `pop`                          |
+| Fila      | FIFO                         | `append` e `popleft`                      |
+| Deque     | duas extremidades            | `append`, `appendleft`, `pop` e `popleft` |
 
-| Estrutura | Regra principal | Operações comuns |
-|---|---|---|
-| Lista | sequência indexada e mutável | acessar, inserir e remover |
-| Pilha | LIFO | `append` e `pop` |
-| Fila | FIFO | `append` e `popleft` |
-| Deque | duas extremidades | `append`, `appendleft`, `pop` e `popleft` |
+<br>
 
 A escolha da estrutura depende da forma como os elementos serão
 inseridos, acessados e removidos no problema.
+
+## Diferença entre uma Lista e Filas 
+
+<br>
+
+
+- Uma **lista** permite acessar diretamente um elemento pelo índice em
+tempo **O(1)** e adicionar ao final em **O(1)** amortizado. Porém, inserir ou remover elementos no início custa **O(n)**, pois os demais elementos precisam
+ser deslocados. 
+
+
+- Já um **deque**, usado como fila, permite adicionar no final e
+remover do início em **O(1)**. Em contrapartida, acessar elementos no meio do
+`deque` custa **O(n)**. 
+
+- Prefira listas quando precisar acessar
+elementos por índice com frequência e `deque` para filas com muitas inserções
+e remoções nas extremidades.
+
+---
+
+### Exemplo de comparação (Fila de banco)
+
+<br>
+
+![](figuras/lista_vs_deque.png){width="90%" height="auto"}
+
+

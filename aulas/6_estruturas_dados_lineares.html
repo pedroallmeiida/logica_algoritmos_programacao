@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.4.551">
 
   <meta name="author" content="Professor: Pedro M. Almeida-Junior">
-  <title>quarto-inputdfe885a7</title>
+  <title>quarto-input9e4d4e71</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -416,6 +416,20 @@ Professor: Pedro M. Almeida-Junior
 </section>
 <section class="slide level2">
 
+<h3 id="estruturas-de-dados-lineares">Estruturas de dados lineares</h3>
+<p><br></p>
+<p><strong>Estruturas de dados lineares</strong> organizam seus elementos em uma sequência, na qual cada elemento ocupa uma posição definida e, em geral, mantém relação com seu antecessor e seu sucessor.</p>
+<p>Exemplos de estruturas lineares:</p>
+<ul>
+<li>listas;</li>
+<li>pilhas;</li>
+<li>filas;</li>
+<li>deques.</li>
+</ul>
+<p>Nessas estruturas, os elementos são percorridos seguindo uma única dimensão lógica de organização.</p>
+</section>
+<section class="slide level2">
+
 <h3 id="tipos-abstratos-de-dados-tad">Tipos Abstratos de Dados (TAD)</h3>
 <p><br></p>
 <p>Um Tipo Abstrato de Dados (TAD) define:</p>
@@ -431,26 +445,24 @@ Professor: Pedro M. Almeida-Junior
 <li><strong>Comportamento:</strong> o último elemento inserido deve ser o primeiro elemento removido.</li>
 </ul>
 </section>
-<section class="slide level2">
-
-<h3 id="estruturas-de-dados-lineares">Estruturas de dados lineares</h3>
+<section id="pilhas" class="slide level2">
+<h2>Pilhas</h2>
 <p><br></p>
-<p><strong>Estruturas de dados lineares</strong> organizam seus elementos em uma sequência, na qual cada elemento ocupa uma posição definida e, em geral, mantém relação com seu antecessor e seu sucessor.</p>
-<p>Exemplos de estruturas lineares:</p>
-<ul>
-<li>listas;</li>
-<li>pilhas;</li>
-<li>filas;</li>
-<li>deques.</li>
-</ul>
-<p>Nessas estruturas, os elementos são percorridos seguindo uma única dimensão lógica de organização.</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div style="background: rgba(78, 93, 181, 0.1); backdrop-filter: blur(10px); border-radius: 10px; padding: 10px; border: 1px solid rgba(100, 87, 108, 0.3);">
+<p>Uma pilha segue o princípio <strong>LIFO</strong>: o último elemento inserido é o primeiro a ser removido.</p>
+<p>Um exemplo cotidiano é uma pilha de livros. Para retirar um livro do meio, é necessário retirar primeiro os livros que estão acima dele.</p>
+</div>
+</div><div class="column" style="width:60%;">
+<p><img data-src="figuras/pilhas_livros.png" style="width:100.0%"></p>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-<h3 id="pilhas">Pilhas</h3>
+<h3 id="exemplo-pilhas-python">Exemplo Pilhas (Python)</h3>
 <p><br></p>
-<p>Uma pilha segue o princípio <strong>LIFO</strong>: o último elemento inserido é o primeiro a ser removido.</p>
-<p>Um exemplo cotidiano é uma pilha de livros. Para retirar um livro do meio, é necessário retirar primeiro os livros que estão acima dele.</p>
 <p>Em Python, podemos usar <code>append</code> para empilhar e <code>pop</code> para desempilhar:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a>pilha <span class="op">=</span> []</span>
 <span id="cb1-2"><a href=""></a></span>
@@ -458,7 +470,7 @@ Professor: Pedro M. Almeida-Junior
 <span id="cb1-4"><a href=""></a>pilha.append(<span class="st">"Livro B"</span>)</span>
 <span id="cb1-5"><a href=""></a>pilha.append(<span class="st">"Livro C"</span>)</span>
 <span id="cb1-6"><a href=""></a></span>
-<span id="cb1-7"><a href=""></a>livro <span class="op">=</span> pilha.pop()      <span class="co"># desempilhar: Livro C</span></span>
+<span id="cb1-7"><a href=""></a>livro <span class="op">=</span> pilha.pop()      <span class="co"># desempilhar</span></span>
 <span id="cb1-8"><a href=""></a><span class="bu">print</span>(livro)</span>
 <span id="cb1-9"><a href=""></a><span class="bu">print</span>(pilha)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
@@ -471,22 +483,30 @@ Professor: Pedro M. Almeida-Junior
 <span id="cb2-3"><a href=""></a>pilha.append(<span class="dv">10</span>)</span>
 <span id="cb2-4"><a href=""></a>pilha.append(<span class="dv">20</span>)</span>
 <span id="cb2-5"><a href=""></a></span>
-<span id="cb2-6"><a href=""></a><span class="cf">if</span> pilha:</span>
-<span id="cb2-7"><a href=""></a>    topo <span class="op">=</span> pilha[<span class="op">-</span><span class="dv">1</span>]     <span class="co"># consulta o topo sem remover</span></span>
-<span id="cb2-8"><a href=""></a>    <span class="bu">print</span>(topo)</span>
+<span id="cb2-6"><a href=""></a><span class="co"># consulta o topo sem remover</span></span>
+<span id="cb2-7"><a href=""></a>topo <span class="op">=</span> pilha[<span class="op">-</span><span class="dv">1</span>]     </span>
+<span id="cb2-8"><a href=""></a><span class="bu">print</span>(topo)</span>
 <span id="cb2-9"><a href=""></a></span>
-<span id="cb2-10"><a href=""></a><span class="cf">if</span> pilha:</span>
-<span id="cb2-11"><a href=""></a>    valor <span class="op">=</span> pilha.pop()   <span class="co"># remove o elemento do topo</span></span>
-<span id="cb2-12"><a href=""></a>    <span class="bu">print</span>(valor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>O teste <code>if pilha</code> evita tentar remover um elemento de uma pilha vazia.</p>
+<span id="cb2-10"><a href=""></a><span class="co"># remove o elemento do topo</span></span>
+<span id="cb2-11"><a href=""></a>valor_topo <span class="op">=</span> pilha.pop()   </span>
+<span id="cb2-12"><a href=""></a><span class="bu">print</span>(valor_topo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section class="slide level2">
 
 <h3 id="filas">Filas</h3>
+<ul>
+<li><p>Uma fila segue o princípio <strong>FIFO (First in, First out) </strong>: o primeiro elemento inserido é o primeiro a ser removido.</p></li>
+<li><p>Um exemplo cotidiano é uma fila de atendimento. A pessoa que chega primeiro deve ser atendida primeiro.</p></li>
+</ul>
 <p><br></p>
-<p>Uma fila segue o princípio <strong>FIFO</strong>: o primeiro elemento inserido é o primeiro a ser removido.</p>
-<p>Um exemplo cotidiano é uma fila de atendimento. A pessoa que chega primeiro deve ser atendida primeiro.</p>
+
+<img data-src="figuras/fila_exemplo.png" style="width:80.0%" class="r-stretch"></section>
+<section class="slide level2">
+
+<h3 id="exemplo-filas-python">Exemplo Filas (Python)</h3>
+<p><br></p>
 <p>Para implementar uma fila de forma adequada, utilizamos <code>deque</code>, da biblioteca padrão <code>collections</code>:</p>
+<p><br></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="im">from</span> collections <span class="im">import</span> deque</span>
 <span id="cb3-2"><a href=""></a></span>
 <span id="cb3-3"><a href=""></a>fila <span class="op">=</span> deque()</span>
@@ -509,18 +529,25 @@ Professor: Pedro M. Almeida-Junior
 <span id="cb4-4"><a href=""></a></span>
 <span id="cb4-5"><a href=""></a>fila.append(<span class="st">"Caio"</span>)      <span class="co"># enfileirar</span></span>
 <span id="cb4-6"><a href=""></a></span>
-<span id="cb4-7"><a href=""></a><span class="cf">if</span> fila:</span>
-<span id="cb4-8"><a href=""></a>    proxima <span class="op">=</span> fila.popleft()  <span class="co"># desenfileirar</span></span>
-<span id="cb4-9"><a href=""></a>    <span class="bu">print</span>(<span class="ss">f"Atendendo: </span><span class="sc">{</span>proxima<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb4-10"><a href=""></a></span>
-<span id="cb4-11"><a href=""></a><span class="bu">print</span>(fila)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>O <code>deque</code> permite inserir no final e remover no início sem deslocar todos os demais elementos.</p>
+<span id="cb4-7"><a href=""></a></span>
+<span id="cb4-8"><a href=""></a>proxima <span class="op">=</span> fila.popleft()  <span class="co"># desenfileirar</span></span>
+<span id="cb4-9"><a href=""></a><span class="bu">print</span>(<span class="ss">f"Atendendo: </span><span class="sc">{</span>proxima<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-10"><a href=""></a><span class="bu">print</span>(fila)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<p><strong>OBS:</strong> O <code>deque</code> permite inserir no final e remover no início sem deslocar todos os demais elementos.</p>
 </section>
 <section class="slide level2">
 
 <h3 id="deques">Deques</h3>
 <p><br></p>
 <p>O deque (<em>double-ended queue</em>) é uma fila de duas extremidades. Ele permite inserir e remover elementos tanto no início quanto no final.</p>
+<p><br></p>
+
+<img data-src="figuras/deques.png" style="width:80.0%" class="r-stretch"></section>
+<section class="slide level2">
+
+<h3 id="exemplos-deque-python">Exemplos Deque (Python)</h3>
+<p><br></p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a><span class="im">from</span> collections <span class="im">import</span> deque</span>
 <span id="cb5-2"><a href=""></a></span>
 <span id="cb5-3"><a href=""></a>deque_numeros <span class="op">=</span> deque([<span class="dv">2</span>, <span class="dv">3</span>])</span>
@@ -574,7 +601,23 @@ Professor: Pedro M. Almeida-Junior
 </tr>
 </tbody>
 </table>
+<p><br></p>
 <p>A escolha da estrutura depende da forma como os elementos serão inseridos, acessados e removidos no problema.</p>
+</section>
+<section id="diferença-entre-uma-lista-e-filas" class="slide level2">
+<h2>Diferença entre uma Lista e Filas</h2>
+<p><br></p>
+<ul>
+<li><p>Uma <strong>lista</strong> permite acessar diretamente um elemento pelo índice em tempo <strong>O(1)</strong> e adicionar ao final em <strong>O(1)</strong> amortizado. Porém, inserir ou remover elementos no início custa <strong>O(n)</strong>, pois os demais elementos precisam ser deslocados.</p></li>
+<li><p>Já um <strong>deque</strong>, usado como fila, permite adicionar no final e remover do início em <strong>O(1)</strong>. Em contrapartida, acessar elementos no meio do <code>deque</code> custa <strong>O(n)</strong>.</p></li>
+<li><p>Prefira listas quando precisar acessar elementos por índice com frequência e <code>deque</code> para filas com muitas inserções e remoções nas extremidades.</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="exemplo-de-comparação-fila-de-banco">Exemplo de comparação (Fila de banco)</h3>
+<p><br></p>
+<p><img data-src="figuras/lista_vs_deque.png" style="width:90.0%"></p>
 <div class="quarto-auto-generated-content">
 <p><img src="Marca_UEPB.png" class="slide-logo"></p>
 <div class="footer footer-default">

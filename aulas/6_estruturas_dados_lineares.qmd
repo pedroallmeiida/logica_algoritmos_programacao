@@ -73,12 +73,9 @@ Um Tipo Abstrato de Dados (TAD) define:
 
 ------------------------------------------------------------------------
 
-
 ## Pilhas
 
 <br>
-
-
 
 ::: columns
 ::: {.column width="40%"}
@@ -96,8 +93,7 @@ meio, é necessário retirar primeiro os livros que estão acima dele.
 :::
 :::
 
-
---- 
+------------------------------------------------------------------------
 
 ### Exemplo Pilhas (Python)
 
@@ -116,7 +112,8 @@ livro = pilha.pop()      # desempilhar
 print(livro)
 print(pilha)
 ```
----
+
+------------------------------------------------------------------------
 
 ### Operações com pilhas
 
@@ -136,25 +133,22 @@ print(topo)
 valor_topo = pilha.pop()   
 print(valor_topo)
 ```
----
+
+------------------------------------------------------------------------
 
 ### Filas
 
+-   Uma fila segue o princípio **FIFO (First in, First out)** : o
+    primeiro elemento inserido é o primeiro a ser removido.
 
-- Uma fila segue o princípio **FIFO (First in, First out) **: o primeiro elemento inserido é o
-primeiro a ser removido.
-
-- Um exemplo cotidiano é uma fila de atendimento. A pessoa que chega
-primeiro deve ser atendida primeiro.
-
+-   Um exemplo cotidiano é uma fila de atendimento. A pessoa que chega
+    primeiro deve ser atendida primeiro.
 
 <br>
 
-
 ![](figuras/fila_exemplo.png){width="80%" height="auto"}
 
----
-
+------------------------------------------------------------------------
 
 ### Exemplo Filas (Python)
 
@@ -197,10 +191,11 @@ proxima = fila.popleft()  # desenfileirar
 print(f"Atendendo: {proxima}")
 print(fila)
 ```
+
 <br>
 
-**OBS:** O `deque` permite inserir no final e remover no início sem deslocar
-todos os demais elementos.
+**OBS:** O `deque` permite inserir no final e remover no início sem
+deslocar todos os demais elementos.
 
 ------------------------------------------------------------------------
 
@@ -215,7 +210,7 @@ permite inserir e remover elementos tanto no início quanto no final.
 
 ![](figuras/deques.png){width="80%" height="auto"}
 
----
+------------------------------------------------------------------------
 
 ### Exemplos Deque (Python)
 
@@ -254,30 +249,27 @@ print(deque_numeros)
 A escolha da estrutura depende da forma como os elementos serão
 inseridos, acessados e removidos no problema.
 
-## Diferença entre uma Lista e Filas 
+## Diferença entre uma Lista e Filas
 
 <br>
 
+-   Uma **lista** permite acessar diretamente um elemento pelo índice em
+    tempo **O(1)** e adicionar um elemento em ordem **O(1)**, pois sempre adiciona no final. Porém,
+    inserir ou remover elementos no início custa **O(n)**, pois os
+    demais elementos precisam ser deslocados.
 
-- Uma **lista** permite acessar diretamente um elemento pelo índice em
-tempo **O(1)** e adicionar ao final em **O(1)** amortizado. Porém, inserir ou remover elementos no início custa **O(n)**, pois os demais elementos precisam
-ser deslocados. 
+-   Já um **deque**, usado como fila, permite adicionar no final e
+    remover do início em **O(1)**. Em contrapartida, acessar elementos
+    no meio do `deque` custa **O(n)**.
 
+-   Prefira listas quando precisar acessar elementos por índice com
+    frequência e `deque` para filas com muitas inserções e remoções nas
+    extremidades.
 
-- Já um **deque**, usado como fila, permite adicionar no final e
-remover do início em **O(1)**. Em contrapartida, acessar elementos no meio do
-`deque` custa **O(n)**. 
-
-- Prefira listas quando precisar acessar
-elementos por índice com frequência e `deque` para filas com muitas inserções
-e remoções nas extremidades.
-
----
+------------------------------------------------------------------------
 
 ### Exemplo de comparação (Fila de banco)
 
 <br>
 
 ![](figuras/lista_vs_deque.png){width="90%" height="auto"}
-
-
